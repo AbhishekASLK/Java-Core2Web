@@ -1,0 +1,6 @@
+class Test {
+
+	private Test() {
+	
+	}
+}
