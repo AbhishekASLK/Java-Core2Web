@@ -1,0 +1,110 @@
+import java.util.*;
+
+class NavMapMethods {
+
+	public static void main(String[] args){
+	
+		NavigableMap m = new TreeMap();
+		
+		m.put(10,"Elon");
+		m.put(13,"Linus");
+		m.put(12,"Bill");
+		m.put(11,"Steve");
+		
+		System.out.println(m); // {10=Elon, 11=Steve, 12=Bill, 13=Linus}
+
+  		// Map$Entry<K, V> lowerEntry(K);
+		System.out.println(m.lowerEntry(14));
+  		
+		// K lowerKey(K);
+		System.out.println(m.lowerKey(14));
+
+  		// Map$Entry<K, V> floorEntry(K);
+		System.out.println(m.floorEntry(11));
+
+  		// K floorKey(K);
+		System.out.println(m.floorKey(11));
+
+  		// Map$Entry<K, V> ceilingEntry(K);
+		System.out.println(m.ceilingEntry(12));
+  		
+		// K ceilingKey(K);
+		System.out.println(m.ceilingKey(18));
+
+  		// Map$Entry<K, V> higherEntry(K);
+		System.out.println(m.higherEntry(11));
+
+  		// K higherKey(K);
+		System.out.println(m.higherKey(11));
+
+  		// Map$Entry<K, V> firstEntry();
+		System.out.println(m.firstEntry());
+
+  		// Map$Entry<K, V> lastEntry();
+		System.out.println(m.lastEntry());
+
+		m.put(9,"Ironman");
+		m.put(14,"Loki");
+
+		System.out.println(m);
+
+  		// Map$Entry<K, V> pollFirstEntry();
+		m.pollFirstEntry();
+
+  		// Map$Entry<K, V> pollLastEntry();
+		m.pollLastEntry();
+
+		System.out.println(m); // {10=Elon, 11=Steve, 12=Bill, 13=Linus}
+
+		System.out.println(m.descendingMap());
+  		
+		// public abstract java.util.NavigableSet<K> navigableKeySet();
+		System.out.println(m.navigableKeySet());
+  		
+		// NavigableSet<K> descendingKeySet();
+		System.out.println(m.descendingKeySet());
+  
+		// NavigableMap<K, V> subMap(K, boolean, K, boolean);
+		System.out.println(m.subMap(10,true,11,true));
+  		
+		// NavigableMap<K, V> headMap(K, boolean);
+		System.out.println(m.headMap(11,true));
+
+  		// NavigableMap<K, V> tailMap(K, boolean);
+		System.out.println(m.tailMap(11,true));
+
+ 		// SortedMap<K, V> subMap(K, K);
+		System.out.println(m.subMap(10,14));
+
+ 		// SortedMap<K, V> headMap(K);
+		System.out.println(m.headMap(11));
+
+  		// SortedMap<K, V> tailMap(K);
+		System.out.println(m.tailMap(11));
+	}
+}
+
+---------------------- Output ------------------------------
+
+{10=Elon, 11=Steve, 12=Bill, 13=Linus}
+13=Linus
+13
+11=Steve
+11
+12=Bill
+null
+12=Bill
+12
+10=Elon
+13=Linus
+{9=Ironman, 10=Elon, 11=Steve, 12=Bill, 13=Linus, 14=Loki}
+{10=Elon, 11=Steve, 12=Bill, 13=Linus}
+{13=Linus, 12=Bill, 11=Steve, 10=Elon}
+[10, 11, 12, 13]
+[13, 12, 11, 10]
+{10=Elon, 11=Steve}
+{10=Elon, 11=Steve}
+{11=Steve, 12=Bill, 13=Linus}
+{10=Elon, 11=Steve, 12=Bill, 13=Linus}
+{10=Elon}
+{11=Steve, 12=Bill, 13=Linus}
