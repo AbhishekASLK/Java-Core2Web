@@ -10,5 +10,6 @@ class marvel {
 
 	public static void main(String[] args) {
 		marvel m = new marvel("Shashi");
+		System.out.println(m);
 	}
 }
