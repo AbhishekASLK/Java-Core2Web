@@ -44,5 +44,12 @@ class Test {
 
 		System.out.println(f4.equals(f5));
 
+		// f6.mkdirs();
+		File f6 = new File("marvel","blackWidow");
+		f6.mkdirs();
+		
+		// f7.mkdir();
+		File f7 = new File("DC","Superman");
+		f7.mkdir();
 	}
 }
