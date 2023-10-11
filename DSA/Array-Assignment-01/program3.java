@@ -5,15 +5,15 @@ class rangeSumQuery {
 
 	static int[] rangeSumQuery(int[] arr, int n, int[][] query){
 	
-		int[] res = new int[m];
+		int[] res = new int[query.length];
 
 		// [[0,3],[1,2]]
 
 		for(int i=0;i<query.length;i++){
 			if(query[i][0] == 0)
-				res[i]=arr[query[1]];
+				res[i]=arr[query[i][1]];
 			else
-				res[i]=arr[query[1]]-arr[query[0]-1];
+				res[i]=arr[query[i][1]]-arr[query[i][0]-1];
 		}
 
 		return res;
